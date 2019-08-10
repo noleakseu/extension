@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Audit potential privacy leaks on websites"
+  },
+  "refreshButton": {
+    "message": "Reload"
+  },
+  "allButton": {
+    "message": "Block all"
+  },
+  "enableButton": {
+    "message": "On"
+  },
+  "disableButton": {
+    "message": "Off"
+  },
+  "popupNone": {
+    "message": "No leaks on $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audit is disabled here"
+  },
+  "popupEnabled": {
+    "message": "Audit is enabled here"
+  },
+  "popupCount": {
+    "message": "$COUNT$ leaks on $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}
