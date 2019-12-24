@@ -167,7 +167,7 @@
         if (host.indexOf('.') === -1 || guest.indexOf('.') === -1) {
             return false;
         }
-        return host.split('.').slice(-2).join('.') !== guest.split('.').slice(-2).join('.');
+        return host !== guest;
     }
 
     function updateBadge() {

@@ -1,0 +1,13 @@
+{
+    "name": "NoLeaks",
+    "version": "1.0.0",
+    "webExt": {
+        "verbose": true,
+        "build": {
+            "overwriteDest": true
+        },
+        "sourceDir": "./",
+        "artifactsDir": "dist",
+        "ignoreFiles": ["dist/", "package.json", "README.md"]
+    }
+}

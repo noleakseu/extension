@@ -3,7 +3,7 @@
   "name": "__MSG_name__",
   "short_name": "__MSG_name__",
   "description": "__MSG_description__",
-  "version": "1.23",
+  "version": "1.24",
   "author": "Olegs Kunicins",
   "minimum_chrome_version": "49.0",
   "minimum_opera_version": "36.0",
