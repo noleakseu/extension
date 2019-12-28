@@ -10,29 +10,32 @@
             width: auto !important;
             width: 320px;
         }
+        #list {
+            border-width: 0;
+        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light navbar-expand-sm bg-light">
     <a class="navbar-brand" href="https://noleaks.eu/">
         <img id="header" src="/assets/on-32.png" width="32" height="32" class="d-inline-block align-top" alt=""/>
         NoLeaks
     </a>
-    <button type="button" id="enableButton" class="btn btn-sm btn-success"></button>
+    <button type="button" id="enableToggle" class="btn btn-sm btn-success"></button>
 </nav>
-<div class="tab-content">
-    <div class="list-group" role="tablist" id="list"></div>
-    <div class="alert" role="alert" id="status"></div>
+    <div class="list-group" role="tablist">
+        <div class="list-group-item" id="list"></div>
+    </div>
+    <div class="alert small" role="alert" id="status"></div>
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <button type="button" id="allButton" class="btn btn-secondary"></button>
-                <button type="button" id="refreshButton" class="btn btn-primary"></button>
+                <button type="button" id="allButton" class="btn btn-sm btn-secondary"></button>
+                <button type="button" id="refreshButton" class="btn btn-sm btn-primary"></button>
             </div>
         </div>
         <div class="row">&nbsp;</div>
     </div>
-</div>
 <script src="/src/frontend.js"></script>
 </body>
 </html>

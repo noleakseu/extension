@@ -5,8 +5,11 @@
 /* global chrome */
 "use strict";
 (function () {
-    let isEnabled = true;
-    let affiliates = null;
+    let affiliates = {
+        hostname: null,
+        entries: [],
+        enabled: true
+    };
     let tabId = null;
     const sensor = chrome.runtime.id;
 
@@ -16,10 +19,17 @@
             loadState();
         }
     });
+
     // new tab, new site, reload
     chrome.webNavigation.onCommitted.addListener(function (tab) {
         if (tab.frameId === 0) {
-            resetState(new URL(tab.url).hostname);
+            affiliates = {
+                hostname: null,
+                entries: [],
+                enabled: true
+            };
+            tabId = null;
+            loadState();
         }
     });
 
@@ -29,21 +39,20 @@
                 sendResponse(affiliates);
                 break;
             case 'blockedToggle':
-                if (affiliates.blocked.findIndex(item => item === message.hostname) === -1) {
-                    affiliates.blocked.push(message.hostname);
-                } else {
-                    affiliates.blocked = affiliates.blocked.filter(item => item !== message.hostname);
+                let idx = affiliates.entries.findIndex(item => item.hostname === message.hostname);
+                if (idx !== -1) {
+                    affiliates.entries[idx].blocked = !affiliates.entries[idx].blocked;
                 }
                 updateSettings();
                 break;
             case 'getEnabled':
-                sendResponse(isEnabled);
+                sendResponse(affiliates.enabled);
                 break;
             case 'toggleEnable':
-                isEnabled = !isEnabled;
+                affiliates.enabled = !affiliates.enabled;
                 updateSettings();
                 updateBadge();
-                sendResponse(isEnabled);
+                sendResponse(affiliates.enabled);
                 break;
             default:
                 console.error('Unsupported action ' + message.action);
@@ -52,47 +61,42 @@
 
     function updateSettings() {
         let settings = {};
-        if (affiliates !== null) {
-            settings[affiliates.hostname] = {'enabled': isEnabled, 'blocked': affiliates.blocked};
-            chrome.storage.local.set(settings);
-        }
-        return settings;
+        settings[affiliates.hostname] = affiliates;
+        chrome.storage.local.set(settings);
     }
 
     chrome.webRequest.onBeforeRequest.addListener(
-            function (request) {
-                if (isEnabled && request.tabId === tabId && request.type !== 'main_frame') {
-                    let url = new URL(request.url);
-                    if (isAffiliate(affiliates.hostname, url.hostname)) {
-                        let isBlocked = affiliates.blocked.findIndex(item => item === url.hostname) !== -1;
-                        setEntry(
-                                {
-                                    'hostname': url.hostname,
-                                    'protocol': url.protocol.replace(":", ""),
-                                    'blocked': isBlocked
-                                }
-                        );
-                        if (isBlocked) {
-                            return {cancel: true};
-                        }
+        function (request) {
+            if (affiliates.enabled && request.tabId === tabId && request.type !== 'main_frame') {
+                let url = new URL(request.url);
+                if (isAffiliate(affiliates.hostname, url.hostname)) {
+                    let idx = affiliates.entries.findIndex(item => item.hostname === url.hostname);
+                    let isBlocked = idx !== -1 && affiliates.entries[idx].blocked;
+                    if (idx === -1) {
+                        let entry = {
+                            'hostname': url.hostname,
+                            'protocol': url.protocol.replace(":", ""),
+                            'blocked': isBlocked
+                        };
+                        affiliates.entries.push(entry);
+                        publish(entry);
+                        updateSettings();
+                        chrome.runtime.sendMessage({
+                            'action': 'updateAffiliates',
+                            'affiliates': affiliates
+                        }, function () {
+                            updateBadge();
+                        });
+                    }
+                    if (isBlocked) {
+                        return {cancel: true};
                     }
                 }
-            },
-            {urls: ["<all_urls>"]},
-            ["blocking"]
-            );
-
-    function setEntry(entry) {
-        if (affiliates.entries.findIndex(item => item.hostname === entry.hostname) === -1) {
-            affiliates.entries.push(entry);
-            affiliates.count = affiliates.entries.length;
-            sessionStorage.setItem(affiliates.hostname, JSON.stringify(affiliates));
-            updateBadge();
-            publish(entry);
-            chrome.runtime.sendMessage({'action': 'updateAffiliates', 'affiliates': affiliates}, function (e) {
-            });
-        }
-    }
+            }
+        },
+        {urls: ["<all_urls>"]},
+        ["blocking"]
+    );
 
     function hashCode(string) {
         let hash = 0, i;
@@ -104,6 +108,7 @@
     }
 
     let published = {};
+
     function publish(entry) {
         if (typeof navigator !== 'undefined' && !navigator.onLine) {
             return;
@@ -128,36 +133,23 @@
         }
     }
 
-    function resetState(hostname) {
-        sessionStorage.removeItem(hostname);
-        isEnabled = true;
-        affiliates = null;
-        tabId = null;
-        loadState();
-    }
-
     function loadState() {
         chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
             let hostname = new URL(tabs[0].url).hostname;
             chrome.storage.local.get(hostname, function (settings) {
-                if (sessionStorage.getItem(hostname)) {
-                    affiliates = JSON.parse(sessionStorage.getItem(hostname));
-                } else {
+                if (!settings.hasOwnProperty(hostname)) {
                     affiliates = {
-                        'entries': [],
-                        'blocked': [],
-                        'count': 0,
+                        'entries': [], // hostname, protocol, blocked
+                        'enabled': true,
                         'hostname': hostname
                     };
+                    updateSettings();
+                } else {
+                    affiliates = settings[hostname];
                 }
-                if (!settings.hasOwnProperty(hostname)) {
-                    settings = updateSettings();
-                }
-                isEnabled = settings[hostname].enabled;
-                affiliates.blocked = settings[hostname].blocked;
                 tabId = tabs[0].id;
-                updateBadge();
-                chrome.runtime.sendMessage({'action': 'updateAffiliates', 'affiliates': affiliates}, function (e) {
+                chrome.runtime.sendMessage({'action': 'updateAffiliates', 'affiliates': affiliates}, function () {
+                    updateBadge();
                 });
             });
         });
@@ -175,18 +167,18 @@
             return;
         }
         chrome.browserAction.setBadgeBackgroundColor({color: '#808080'});
-        if (!isEnabled) {
+        if (!affiliates.enabled) {
             chrome.browserAction.setIcon({path: "/assets/off-32.png"});
             chrome.browserAction.setBadgeText({text: ''});
-        } else if (isEnabled && affiliates !== null && affiliates.count > 0) {
+        } else if (affiliates.enabled && affiliates.entries.length > 0) {
             if (affiliates.entries.findIndex(item => item.blocked === false) === -1) {
                 chrome.browserAction.setIcon({path: "/assets/on-32.png"});
             } else {
                 chrome.browserAction.setBadgeBackgroundColor({color: '#ff2a37'});
                 chrome.browserAction.setIcon({path: "/assets/red-32.png"});
             }
-            chrome.browserAction.setBadgeText({text: affiliates.count.toString()});
-        } else if (isEnabled && (affiliates === null || affiliates.count === 0)) {
+            chrome.browserAction.setBadgeText({text: affiliates.entries.length.toString()});
+        } else if (affiliates.enabled && (affiliates.entries.length === 0)) {
             chrome.browserAction.setIcon({path: "/assets/on-32.png"});
             chrome.browserAction.setBadgeText({text: ''});
         }

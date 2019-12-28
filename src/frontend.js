@@ -10,7 +10,7 @@
     const list = document.getElementById('list');
     const allButton = document.getElementById('allButton');
     const refreshButton = document.getElementById('refreshButton');
-    const enableButton = document.getElementById('enableButton');
+    const enableToggle = document.getElementById('enableToggle');
 
     allButton.textContent = chrome.i18n.getMessage('allButton');
     allButton.addEventListener('click', function () {
@@ -32,8 +32,8 @@
     }, false);
 
 
-    enableButton.textContent = chrome.i18n.getMessage('enableButton');
-    enableButton.addEventListener('click', toggleEnable, false);
+    enableToggle.textContent = chrome.i18n.getMessage('enableButton');
+    enableToggle.addEventListener('click', toggleEnable, false);
 
     chrome.runtime.sendMessage({'action': 'getEnabled'}, function (isEnabled) {
         updateButtons(isEnabled);
@@ -58,7 +58,7 @@
             return;
         }
         refreshButton.disabled = false;
-        if (affiliates.count === 0) {
+        if (affiliates.entries.length === 0) {
             return;
         }
         let leaks = 0;
@@ -69,10 +69,8 @@
             if (document.getElementById(affiliates.entries[i].hostname) !== null) {
                 continue;
             }
-            let parentDiv = document.createElement('div');
-            parentDiv.setAttribute('class', 'list-group-item list-group-item');
             let div = document.createElement('div');
-            div.setAttribute('class', 'form-check-inline');
+            div.setAttribute('class', 'form-check form-control-sm');
             let input = document.createElement('input');
             input.setAttribute('class', 'form-check-input');
             input.setAttribute('type', 'checkbox');
@@ -93,8 +91,7 @@
             label.appendChild(document.createTextNode(affiliates.entries[i].hostname));
             div.appendChild(input);
             div.appendChild(label);
-            parentDiv.appendChild(div);
-            list.appendChild(parentDiv);
+            list.appendChild(div);
         }
 
         if (leaks > 0) {
@@ -114,16 +111,16 @@
             allButton.disabled = false;
             refreshButton.disabled = false;
             status.textContent = chrome.i18n.getMessage('popupEnabled');
-            enableButton.textContent = chrome.i18n.getMessage('disableButton');
-            enableButton.classList.remove('btn-danger');
+            enableToggle.textContent = chrome.i18n.getMessage('disableButton');
+            enableToggle.classList.add('btn-danger');
         } else {
             header.src = '/assets/off-32.png';
             allButton.disabled = true;
             refreshButton.disabled = true;
-            enableButton.disabled = false;
+            enableToggle.disabled = false;
             status.textContent = chrome.i18n.getMessage('popupDisabled');
-            enableButton.textContent = chrome.i18n.getMessage('enableButton');
-            enableButton.classList.add('btn-danger');
+            enableToggle.textContent = chrome.i18n.getMessage('enableButton');
+            enableToggle.classList.remove('btn-danger');
         }
     }
 
