@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Tarkastele verkkosivustojen mahdollisia tietosuojavuotoja"
+  },
+  "refreshButton": {
+    "message": "Reload"
+  },
+  "allButton": {
+    "message": "Estä kaikki"
+  },
+  "enableButton": {
+    "message": "Päällä"
+  },
+  "disableButton": {
+    "message": "Vinossa"
+  },
+  "popupNone": {
+    "message": "Ei vuotoja sivustossa $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Tarkastus on poistettu käytöstä täällä"
+  },
+  "popupEnabled": {
+    "message": "Tarkastus on käytössä tässä"
+  },
+  "popupCount": {
+    "message": "$COUNT$ vuotoa sivustossa $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

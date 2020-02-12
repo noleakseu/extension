@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Ellenőrizze a webhelyek lehetséges adatvédelmi szivárgásait"
+  },
+  "refreshButton": {
+    "message": "Reload"
+  },
+  "allButton": {
+    "message": "Összes blokkolása"
+  },
+  "enableButton": {
+    "message": "Tovább"
+  },
+  "disableButton": {
+    "message": "Ki"
+  },
+  "popupNone": {
+    "message": "Nem szivárog a (z) $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Az ellenőrzés itt le van tiltva"
+  },
+  "popupEnabled": {
+    "message": "Az ellenőrzés itt engedélyezve van"
+  },
+  "popupCount": {
+    "message": "$COUNT$ szivárgás jelentkezik a (z) $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

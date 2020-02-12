@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Kontroluj potencjalne wycieki prywatności na stronach internetowych"
+  },
+  "refreshButton": {
+    "message": "Przeładować"
+  },
+  "allButton": {
+    "message": "Zablokuj wszystko"
+  },
+  "enableButton": {
+    "message": "Na"
+  },
+  "disableButton": {
+    "message": "Poza"
+  },
+  "popupNone": {
+    "message": "Brak wycieków w $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audyt jest tutaj wyłączony"
+  },
+  "popupEnabled": {
+    "message": "Audyt jest tutaj włączony"
+  },
+  "popupCount": {
+    "message": "$COUNT$ przecieków w $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

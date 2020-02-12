@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Revidējiet iespējamo privātuma noplūdi vietnēs"
+  },
+  "refreshButton": {
+    "message": "Pārlādēt"
+  },
+  "allButton": {
+    "message": "Bloķēt visu"
+  },
+  "enableButton": {
+    "message": "Ieslēgts"
+  },
+  "disableButton": {
+    "message": "Izslēgts"
+  },
+  "popupNone": {
+    "message": "Vietnei $HOSTNAME$ nav noplūdes",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audits šeit ir ieslēgts"
+  },
+  "popupEnabled": {
+    "message": "Audits šeit ir izslēgts"
+  },
+  "popupCount": {
+    "message": "$COUNT$ noplūdes no vietnes $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Auditeerige veebisaitide võimalikke privaatsuse lekkeid"
+  },
+  "refreshButton": {
+    "message": "Laadige uuesti"
+  },
+  "allButton": {
+    "message": "Blokeeri kõik"
+  },
+  "enableButton": {
+    "message": "Peal"
+  },
+  "disableButton": {
+    "message": "Väljas"
+  },
+  "popupNone": {
+    "message": "$HOSTNAME$ lekkeid pole",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audit on siin keelatud"
+  },
+  "popupEnabled": {
+    "message": "Audit on siin lubatud"
+  },
+  "popupCount": {
+    "message": "$COUNT$ lekivad saidil $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

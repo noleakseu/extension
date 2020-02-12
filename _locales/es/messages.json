@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Audite posibles fugas de privacidad en sitios web"
+  },
+  "refreshButton": {
+    "message": "Recargar"
+  },
+  "allButton": {
+    "message": "Bloquear todo"
+  },
+  "enableButton": {
+    "message": "En"
+  },
+  "disableButton": {
+    "message": "Apagado"
+  },
+  "popupNone": {
+    "message": "No hay fugas en $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "La auditoría está desactivada aquí"
+  },
+  "popupEnabled": {
+    "message": "La auditoría está habilitada aquí"
+  },
+  "popupCount": {
+    "message": "$COUNT$ fugas en $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

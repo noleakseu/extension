@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Ελέγξτε τις πιθανές διαρροές απορρήτου στους ιστότοπους"
+  },
+  "refreshButton": {
+    "message": "Φορτώνω πάλι"
+  },
+  "allButton": {
+    "message": "Μπλόκαρε τα πάντα"
+  },
+  "enableButton": {
+    "message": "Επί"
+  },
+  "disableButton": {
+    "message": "Μακριά από"
+  },
+  "popupNone": {
+    "message": "Δεν διαρροές στο $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Ο έλεγχος είναι απενεργοποιημένος εδώ"
+  },
+  "popupEnabled": {
+    "message": "Ο έλεγχος είναι ενεργοποιημένος εδώ"
+  },
+  "popupCount": {
+    "message": "$COUNT$ διαρροές στο $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

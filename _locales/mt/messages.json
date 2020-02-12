@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Verifika tnixxija ta 'privatezza potenzjali fuq websajts"
+  },
+  "refreshButton": {
+    "message": "Reload"
+  },
+  "allButton": {
+    "message": "Imblokka kollha"
+  },
+  "enableButton": {
+    "message": "Fuq"
+  },
+  "disableButton": {
+    "message": "Off"
+  },
+  "popupNone": {
+    "message": "L-ebda tnixxijiet fuq $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Il-verifika hija b'diżabilità hawn"
+  },
+  "popupEnabled": {
+    "message": "Il-verifika hija ppermettiet hawn"
+  },
+  "popupCount": {
+    "message": "$COUNT$ nixxijiet fuq $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

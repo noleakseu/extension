@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Audituokite galimą privatumo nutekėjimą svetainėse"
+  },
+  "refreshButton": {
+    "message": "Perkrauti iš naujo"
+  },
+  "allButton": {
+    "message": "Užblokuokite viską"
+  },
+  "enableButton": {
+    "message": "Įjungta"
+  },
+  "disableButton": {
+    "message": "Išjungta"
+  },
+  "popupNone": {
+    "message": "Jokių nutekėjimų iš $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Čia neleidžiamas auditas"
+  },
+  "popupEnabled": {
+    "message": "Čia įgalintas auditas"
+  },
+  "popupCount": {
+    "message": "$COUNT$ nuotėkiai iš $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

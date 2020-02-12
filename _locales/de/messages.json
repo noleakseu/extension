@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Prüfen Sie mögliche Datenschutzlecks auf Websites"
+  },
+  "refreshButton": {
+    "message": "Neu laden"
+  },
+  "allButton": {
+    "message": "Alles blockieren"
+  },
+  "enableButton": {
+    "message": "Auf"
+  },
+  "disableButton": {
+    "message": "Aus"
+  },
+  "popupNone": {
+    "message": "Keine Lecks bei $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audit ist hier deaktiviert"
+  },
+  "popupEnabled": {
+    "message": "Audit ist hier aktiviert"
+  },
+  "popupCount": {
+    "message": "$COUNT$ Lecks bei $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Audit potentiële privacylekken op websites"
+  },
+  "refreshButton": {
+    "message": "Opnieuw laden"
+  },
+  "allButton": {
+    "message": "Blokkeer alles"
+  },
+  "enableButton": {
+    "message": "Aan"
+  },
+  "disableButton": {
+    "message": "Uit"
+  },
+  "popupNone": {
+    "message": "Geen lekken op $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audit is hier uitgeschakeld"
+  },
+  "popupEnabled": {
+    "message": "Audit is hier ingeschakeld"
+  },
+  "popupCount": {
+    "message": "$COUNT$ lekken op $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

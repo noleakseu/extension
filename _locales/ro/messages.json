@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Verificați eventualele scurgeri de confidențialitate pe site-urile web"
+  },
+  "refreshButton": {
+    "message": "Reîncarcă"
+  },
+  "allButton": {
+    "message": "Blocheaza tot"
+  },
+  "enableButton": {
+    "message": "Pe"
+  },
+  "disableButton": {
+    "message": "Off"
+  },
+  "popupNone": {
+    "message": "Fără scurgeri la $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Auditul este dezactivat aici"
+  },
+  "popupEnabled": {
+    "message": "Auditul este activat aici"
+  },
+  "popupCount": {
+    "message": "$COUNT$ scurgeri pe $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

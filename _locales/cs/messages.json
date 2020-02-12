@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Auditujte možné úniky soukromí na webových stránkách"
+  },
+  "refreshButton": {
+    "message": "Znovu načíst"
+  },
+  "allButton": {
+    "message": "Blokovat všechny"
+  },
+  "enableButton": {
+    "message": "Na"
+  },
+  "disableButton": {
+    "message": "Vypnuto"
+  },
+  "popupNone": {
+    "message": "Žádný únik na $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audit je zde zakázán"
+  },
+  "popupEnabled": {
+    "message": "Audit je zde povolen"
+  },
+  "popupCount": {
+    "message": "$COUNT$ úniků na $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

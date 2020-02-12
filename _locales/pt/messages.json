@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Audite possíveis vazamentos de privacidade nos sites"
+  },
+  "refreshButton": {
+    "message": "Recarregar"
+  },
+  "allButton": {
+    "message": "Bloqueie todos"
+  },
+  "enableButton": {
+    "message": "Em"
+  },
+  "disableButton": {
+    "message": "Fora"
+  },
+  "popupNone": {
+    "message": "Não há vazamentos em $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "A auditoria está desativada aqui"
+  },
+  "popupEnabled": {
+    "message": "A auditoria está ativada aqui"
+  },
+  "popupCount": {
+    "message": "$COUNT$ vazamentos em $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

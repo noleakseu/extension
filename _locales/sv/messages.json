@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Granska potentiella integritetsläckor på webbplatser"
+  },
+  "refreshButton": {
+    "message": "Ladda om"
+  },
+  "allButton": {
+    "message": "Blockera alla"
+  },
+  "enableButton": {
+    "message": "På"
+  },
+  "disableButton": {
+    "message": "Av"
+  },
+  "popupNone": {
+    "message": "Inga läckor på $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Revisionen är inaktiverad här"
+  },
+  "popupEnabled": {
+    "message": "Revision är aktiverad här"
+  },
+  "popupCount": {
+    "message": "$COUNT$ läckor på $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

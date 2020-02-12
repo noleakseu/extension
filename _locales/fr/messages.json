@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Vérifiez les fuites potentielles de confidentialité sur les sites Web"
+  },
+  "refreshButton": {
+    "message": "Recharger"
+  },
+  "allButton": {
+    "message": "Bloquer tout"
+  },
+  "enableButton": {
+    "message": "Sur"
+  },
+  "disableButton": {
+    "message": "De"
+  },
+  "popupNone": {
+    "message": "Aucune fuite sur $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "L'audit est désactivé ici"
+  },
+  "popupEnabled": {
+    "message": "L'audit est activé ici"
+  },
+  "popupCount": {
+    "message": "$COUNT$ fuites sur $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

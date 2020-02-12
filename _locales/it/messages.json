@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Controlla potenziali perdite di privacy sui siti Web"
+  },
+  "refreshButton": {
+    "message": "Ricaricare"
+  },
+  "allButton": {
+    "message": "Blocca tutto"
+  },
+  "enableButton": {
+    "message": "Su"
+  },
+  "disableButton": {
+    "message": "Spento"
+  },
+  "popupNone": {
+    "message": "Nessuna perdita su $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Il controllo è disabilitato qui"
+  },
+  "popupEnabled": {
+    "message": "Il controllo è abilitato qui"
+  },
+  "popupCount": {
+    "message": "$COUNT$ perdite su $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

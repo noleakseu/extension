@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Revizirajte moguće propuste privatnosti na web stranicama"
+  },
+  "refreshButton": {
+    "message": "Ponovno učitati"
+  },
+  "allButton": {
+    "message": "Blokiraj sve"
+  },
+  "enableButton": {
+    "message": "Na"
+  },
+  "disableButton": {
+    "message": "Isključeno"
+  },
+  "popupNone": {
+    "message": "Nema curenja na $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Revizija je ovdje onemogućena"
+  },
+  "popupEnabled": {
+    "message": "Ovdje je omogućena revizija"
+  },
+  "popupCount": {
+    "message": "$COUNT$ curenja na $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

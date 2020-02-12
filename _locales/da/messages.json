@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Revidere potentielle lækager fra personlige oplysninger på websteder"
+  },
+  "refreshButton": {
+    "message": "Genindlæs"
+  },
+  "allButton": {
+    "message": "Bloker alle"
+  },
+  "enableButton": {
+    "message": "På"
+  },
+  "disableButton": {
+    "message": "Af"
+  },
+  "popupNone": {
+    "message": "Ingen lækager på $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Audit er deaktiveret her"
+  },
+  "popupEnabled": {
+    "message": "Audit er aktiveret her"
+  },
+  "popupCount": {
+    "message": "$COUNT$ lækager på $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}

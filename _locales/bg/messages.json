@@ -1,0 +1,45 @@
+{
+  "name": {
+    "message": "NoLeaks"
+  },
+  "description": {
+    "message": "Одитирайте потенциални течове на поверителност на уебсайтове"
+  },
+  "refreshButton": {
+    "message": "Презареждане"
+  },
+  "allButton": {
+    "message": "Блокирайте всички"
+  },
+  "enableButton": {
+    "message": "На"
+  },
+  "disableButton": {
+    "message": "Изключено"
+  },
+  "popupNone": {
+    "message": "Няма течове на $HOSTNAME$",
+    "placeholders": {
+      "hostname": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupDisabled": {
+    "message": "Одитът е деактивиран тук"
+  },
+  "popupEnabled": {
+    "message": "Одитът е активиран тук"
+  },
+  "popupCount": {
+    "message": "$COUNT$ теча на $HOSTNAME$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "hostname": {
+        "content": "$2"
+      }
+    }
+  }
+}
